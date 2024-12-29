@@ -1,3 +1,4 @@
+using BathenyShop;
 using BathenyShop.App;
 using BathenyShop.Models;
 using Microsoft.AspNetCore.Identity;
@@ -48,7 +49,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
-
+//try to add my custome mw
+app.UseMiddleware<UseCustomeMiddleware>();
 //return any requested static file middle war
 app.UseStaticFiles();
 
@@ -56,6 +58,7 @@ app.UseStaticFiles();
 // support sessions
 app.UseSession();
 app.UseRouting();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
